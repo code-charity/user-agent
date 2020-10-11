@@ -1,7 +1,7 @@
 chrome.storage.local.get(function(items) {
     var ext_storage = items,
-				user_agent = navigator.userAgent,
-				os = '',
+        user_agent = navigator.userAgent,
+        os = '',
         browser = '',
         user_agents = {
             'Chrome': ''
@@ -55,42 +55,57 @@ chrome.storage.local.get(function(items) {
         browser = 'IE';
     }
 
-		document.querySelector('#os').value = ext_storage.os || '';
-		document.querySelector('#os').onchange = function() {
-			ext_storage.os = this.value;
+    document.querySelector('#os').value = ext_storage.os || '';
+    document.querySelector('#os').onchange = function() {
+        ext_storage.os = this.value;
+        ext_storage.custom = '';
+        
+        document.querySelector('#custom').value = '';
 
-			chrome.storage.local.set(ext_storage);
-		};
-		document.querySelector('#os').onfocus = function(){
-			var value = this.value;
+        chrome.storage.local.set(ext_storage);
+    };
+    document.querySelector('#os').onfocus = function() {
+        var value = this.value;
 
-			this.value = '';
+        this.value = '';
 
-			this.onblur = function() {
-				if (this.value === '') {
-					this.value = value;
-				}
-			};
-		};
+        this.onblur = function() {
+            if (this.value === '') {
+                this.value = value;
+            }
+        };
+    };
 
-		document.querySelector('#browser').value = ext_storage.browser || '';
-		document.querySelector('#browser').onchange = function() {
-			ext_storage.browser = this.value;
+    document.querySelector('#browser').value = ext_storage.browser || '';
+    document.querySelector('#browser').onchange = function() {
+        ext_storage.browser = this.value;
+        ext_storage.custom = '';
+        
+        document.querySelector('#custom').value = '';
 
-			chrome.storage.local.set(ext_storage);
-		};
-		document.querySelector('#browser').onfocus = function(){
-			var value = this.value;
+        chrome.storage.local.set(ext_storage);
+    };
+    document.querySelector('#browser').onfocus = function() {
+        var value = this.value;
 
-			this.value = '';
+        this.value = '';
 
-			this.onblur = function() {
-				if (this.value === '') {
-					this.value = value;
-				}
-			};
-		};
+        this.onblur = function() {
+            if (this.value === '') {
+                this.value = value;
+            }
+        };
+    };
+    
+    document.querySelector('#custom').value = ext_storage.custom || '';
+    document.querySelector('#custom').oninput = function() {
+        document.querySelector('#os').value = '';
+        document.querySelector('#browser').value = '';
+        
+        ext_storage.os = '';
+        ext_storage.browser = '';
+        ext_storage.custom = this.value;
 
-		//document.querySelector('#os').placeholder = os;
-    //document.querySelector('#browser').placeholder = browser;
+        chrome.storage.local.set(ext_storage);
+    };
 });
