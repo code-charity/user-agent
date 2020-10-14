@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://github.com/victor-savinov/custom-user-agent">
-        <img src="https://github.com/victor-savinov/custom-user-agent/blob/master/icons/128.png">
+        <img src="https://github.com/victor-savinov/icons/blob/master/custom-user-agent/raised-128.png">
     </a>
 </p>
 
