@@ -1,111 +1,135 @@
-chrome.storage.local.get(function(items) {
-    var ext_storage = items,
-        user_agent = navigator.userAgent,
-        os = '',
-        browser = '',
-        user_agents = {
-            'Chrome': ''
-        };
+/*---------------------------------------------------------------
+>>> CUSTOM USER-AGENT
+-----------------------------------------------------------------
+# Menu
+# Init
+---------------------------------------------------------------*/
 
-    if (navigator.appVersion.indexOf('Win') !== -1) {
-        if (navigator.appVersion.match(/(Windows 10.0|Windows NT 10.0)/)) {
-            os = 'Windows 10';
-        } else if (navigator.appVersion.match(/(Windows 8.1|Windows NT 6.3)/)) {
-            os = 'Windows 8.1';
-        } else if (navigator.appVersion.match(/(Windows 8|Windows NT 6.2)/)) {
-            os = 'Windows 8';
-        } else if (navigator.appVersion.match(/(Windows 7|Windows NT 6.1)/)) {
-            os = 'Windows 7';
-        } else if (navigator.appVersion.match(/(Windows NT 6.0)/)) {
-            os = 'Windows Vista';
-        } else if (navigator.appVersion.match(/(Windows NT 5.1|Windows XP)/)) {
-            os = 'Windows XP';
-        } else {
-            os = 'Windows';
+/*---------------------------------------------------------------
+# MENU
+---------------------------------------------------------------*/
+
+var Menu = {
+    header: {
+        type: 'header',
+
+        section_start: {
+            type: 'section',
+            variant: 'align-start',
+
+            title: {
+                type: 'text',
+                variant: 'title'
+            }
+        },
+        section_end: {
+            type: 'section',
+            variant: 'align-end',
+
+            button_vert: {
+                type: 'button',
+                before: '<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="5.25" r="0.45"/><circle cx="12" cy="12" r="0.45"/><circle cx="12" cy="18.75" r="0.45"/></svg>',
+                onclick: {
+                    type: 'dialog',
+                    variant: 'vertical-menu'
+                }
+            }
         }
-    } else if (navigator.appVersion.indexOf('(iPhone|iPad|iPod)') !== -1) {
-        os = 'iOS';
-    } else if (navigator.appVersion.indexOf('Mac') !== -1) {
-        os = 'macOS';
-    } else if (navigator.appVersion.indexOf('Android') !== -1) {
-        os = 'Android';
-    } else if (navigator.appVersion.indexOf('OpenBSD') !== -1) {
-        os = 'OpenBSD';
-    } else if (navigator.appVersion.indexOf('SunOS') !== -1) {
-        os = 'SunOS';
-    } else if (navigator.appVersion.indexOf('Linux') !== -1) {
-        os = 'Linux';
-    } else if (navigator.appVersion.indexOf('X11') !== -1) {
-        os = 'UNIX';
-    }
+    },
+    main: {
+        type: 'main',
+        appearanceKey: 'home',
+        onchange: function() {
+            document.querySelector('.satus-text--title').innerText = satus.locale.getMessage(this.history[this.history.length - 1].label) || 'User-Agent';
+        },
 
-    if (user_agent.indexOf('Opera') !== -1) {
-        browser = 'Opera';
-    } else if (user_agent.indexOf('Vivaldi') !== -1) {
-        browser = 'Vivaldi';
-    } else if (user_agent.indexOf('Edge') !== -1) {
-        browser = 'Edge';
-    } else if (user_agent.indexOf('Chrome') !== -1) {
-        browser = 'Chrome';
-    } else if (user_agent.indexOf('Safari') !== -1) {
-        browser = 'Safari';
-    } else if (user_agent.indexOf('Firefox') !== -1) {
-        browser = 'Firefox';
-    } else if (user_agent.indexOf('MSIE') !== -1) {
-        browser = 'IE';
-    }
+        hardware: {
+            type: 'radio-group',
+            radios: [{
+                    class: 'satus-button--computer',
+                    before: '<span class="satus-button__before"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg></span>',
+                    label: 'Computer',
+                    value: 'computer'
+                },
+                {
+                    class: 'satus-button--phone',
+                    before: '<span class="satus-button__before"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></span>',
+                    label: 'Phone',
+                    value: 'phone'
+                },
+                {
+                    class: 'satus-button--tv',
+                    before: '<span class="satus-button__before"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="15" x="2" y="7" rx="2" ry="2"/><path d="M17 2l-5 5-5-5"/></svg></span>',
+                    label: 'TV',
+                    value: 'tv'
+                },
+                {
+                    class: 'satus-button--watch',
+                    before: '<span class="satus-button__before"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M12 9v3l1.5 1.5M16.51 17.35l-.35 3.83a2 2 0 01-2 1.82H9.83a2 2 0 01-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 019.83 1h4.35a2 2 0 012 1.82l.35 3.83"/></svg></span>',
+                    label: 'Watch',
+                    value: 'watch'
+                }
+            ]
+        },
+        section: {
+            type: 'section',
+            variant: 'card',
 
-    document.querySelector('#os').value = ext_storage.os || '';
-    document.querySelector('#os').onchange = function() {
-        ext_storage.os = this.value;
-        ext_storage.custom = '';
-        
-        document.querySelector('#custom').value = '';
-
-        chrome.storage.local.set(ext_storage);
-    };
-    document.querySelector('#os').onfocus = function() {
-        var value = this.value;
-
-        this.value = '';
-
-        this.onblur = function() {
-            if (this.value === '') {
-                this.value = value;
+            /*hardware: {
+                type: 'select',
+                label: 'hardware',
+                variant: 'list-item',
+                options: [
+                    { label: 'Computer', value: 'computer' },
+                    { label: 'Phone', value: 'phone' },
+                    { label: 'Tablet', value: 'tablet' },
+                    { label: 'Server', value: 'server' },
+                    { label: 'TV', value: 'tv' },
+                    { label: 'Game Console', value: 'game_console' },
+                    { label: 'Watch', value: 'watch' }
+                ]
+            },*/
+            os: {
+                type: 'select',
+                label: 'os',
+                variant: 'list-item',
+                options: [
+                    { label: 'Windows', value: 'windows' },
+                    { label: 'macOS', value: 'macos' },
+                    { label: 'Linux', value: 'linux' },
+                    { label: 'Android', value: 'android' },
+                    { label: 'iOS', value: 'ios' },
+                    { label: 'Chrome OS', value: 'chrome_os' }
+                ]
+            },
+            software: {
+                type: 'select',
+                label: 'software',
+                variant: 'list-item',
+                options: [
+                    { label: 'Chrome', value: 'chrome' },
+                    { label: 'Safari', value: 'safari' },
+                    { label: 'Edge', value: 'edge' },
+                    { label: 'Firefox', value: 'firefox' },
+                    { label: 'Opera', value: 'opera' },
+                    { label: 'Internet Explorer', value: 'internet_explorer' }
+                ]
             }
-        };
-    };
+        }
+    }
+};
 
-    document.querySelector('#browser').value = ext_storage.browser || '';
-    document.querySelector('#browser').onchange = function() {
-        ext_storage.browser = this.value;
-        ext_storage.custom = '';
-        
-        document.querySelector('#custom').value = '';
 
-        chrome.storage.local.set(ext_storage);
-    };
-    document.querySelector('#browser').onfocus = function() {
-        var value = this.value;
+/*---------------------------------------------------------------
+# INIT
+---------------------------------------------------------------*/
 
-        this.value = '';
+satus.storage.import(function(items) {
+    var language = items.language;
 
-        this.onblur = function() {
-            if (this.value === '') {
-                this.value = value;
-            }
-        };
-    };
-    
-    document.querySelector('#custom').value = ext_storage.custom || '';
-    document.querySelector('#custom').oninput = function() {
-        document.querySelector('#os').value = '';
-        document.querySelector('#browser').value = '';
-        
-        ext_storage.os = '';
-        ext_storage.browser = '';
-        ext_storage.custom = this.value;
-
-        chrome.storage.local.set(ext_storage);
-    };
+    satus.updateStorageKeys(Menu, function() {
+        satus.locale.import(language, function() {
+            satus.render(Menu, document.body);
+        });
+    });
 });

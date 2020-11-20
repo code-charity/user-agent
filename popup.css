@@ -1,0 +1,142 @@
+/*---------------------------------------------------------------
+>>> CUSTOM USER-AGENT
+-----------------------------------------------------------------
+# Theme
+---------------------------------------------------------------*/
+
+@font-face
+{
+    font-family: 'Poppins';
+
+    src: url(assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face
+{
+    font-family: 'Poppins';
+    font-weight: 600;
+
+    src: url(assets/fonts/Poppins-SemiBold.ttf);
+}
+
+@font-face
+{
+    font-family: 'Poppins';
+    font-weight: 700;
+
+    src: url(assets/fonts/Poppins-Bold.ttf);
+}
+
+html,
+body
+{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.satus-header
+{
+    overflow: hidden;
+
+    background: linear-gradient(45deg, #254aab, #3a66da);
+    box-shadow: inset 0 -1px 2px rgba(0,0,0,.2), 0 2px 6px rgba(0,0,0,.4);
+}
+
+.satus-header::before
+{
+    position: absolute;
+    z-index: 1;
+    top: -16px;
+    left: -32vw;
+
+    width: 100vw;
+    height: 100vw;
+
+    content: '';
+
+    opacity: .1;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.satus-header::after
+{
+    position: absolute;
+    top: 16px;
+    right: 8vw;
+
+    width: 64vw;
+    height: 64vw;
+
+    content: '';
+
+    opacity: .1;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.satus-header .satus-text--title
+{
+    font-weight: 600;
+
+    z-index: 1;
+
+    letter-spacing: .4px;
+}
+
+.satus-radio-group
+{
+    display: flex;
+
+    margin: 16px 8px;
+
+    justify-content: space-between;
+}
+
+.satus-button--radio
+{
+    width: calc(calc(100% - 16px) / 3);
+    padding: 0;
+}
+
+.satus-button__before
+{
+    display: flex;
+
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    margin: 0 0 4px;
+    padding: 8px;
+
+    border-radius: 50%;
+    background: var(--satus-theme-section);
+    box-shadow: 0 0 3px rgba(0,0,0,.1);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.satus-button--radio svg
+{
+    width: 24px;
+    height: 24px;
+}
+
+/*.satus-button--computer
+{
+    background: #e95584;
+    color: #fff;
+}*/
+
+.satus-section--card
+{
+    border: none;
+    box-shadow: 0 0 3px rgba(0,0,0,.1);
+}
+
+
+
+/*---------------------------------------------------------------
+# THEME
+---------------------------------------------------------------*/
