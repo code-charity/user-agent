@@ -64,13 +64,15 @@ chrome.storage.local.get(function(items) {
     }
 
     function requestListener(request) {
-        if (typeof request.requestHeaders === 'object') {
-            for (var header of request.requestHeaders) {
-                if (header.name.toLowerCase() === 'user-agent') {
-                    if (ext_storage.custom && ext_storage.custom !== '') {
-                        header.value = ext_storage.custom;
-                    } else {
-                        header.value = createUserAgent();
+        if (ext_storage.hasOwnProperty('os') && ext_storage.hasOwnProperty('browser')) {
+            if (typeof request.requestHeaders === 'object') {
+                for (var header of request.requestHeaders) {
+                    if (header.name.toLowerCase() === 'user-agent') {
+                        if (ext_storage.custom && ext_storage.custom !== '') {
+                            header.value = ext_storage.custom;
+                        } else {
+                            header.value = createUserAgent();
+                        }
                     }
                 }
             }
