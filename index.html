@@ -1,28 +1,99 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Custom User-Agent</title>
-        <link rel="stylesheet" href="satus.css">
-        <link rel="stylesheet" href="popup.css">
-        <style>
-            html, body {
-                width: 300px;
-                height: 500px
+	<head>
+		<meta charset=utf-8>
+		<style>
+			html, body {
+                width: 344px;
+                height: 240px;
+                margin: 0 4px;
+                background: #eee
             }
+            
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center
+            }
+            
+            div {
+                display: flex;
+                width: 300px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                background: #fafafa;
+                align-items: center
+            }
+            
+            input {
+                min-width: 0;
+                height: 48px;
+                margin: 0;
+                padding: 0;
+                color: #111;
+                border: none;
+                outline: none;
+                background: transparent;
+                flex: 1
+            }
+            
+            div > span {
+                margin: 0 4px;
+                cursor: default
+            }
+            
+            div > input,
+            div > span {
+                font-size: 14px;
+                line-height: 14px;
+                text-align: center
+            }
+            
+            input::-webkit-calendar-picker-indicator {
+                display: none
+            }
+            
+            body > span {
+                font-size: 14px;
+                margin: 16px;
+                color: #555
+            }
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type=text list=os-data id=os placeholder=OS>
+			<datalist id=os-data>
+				<option>Windows</option>
+				<option>macOS</option>
+				<option>Linux</option>
+				<option>Android</option>
+				<option>iOS</option>
+				<option>Chrome OS</option>
+			</datalist>
 
-            html
-{
-    /*--satus-theme-header: #254aab;*/
-    --satus-theme-header-text: #fff;
-    --satus-theme-main: #f5f5f9;
-    --satus-theme-main-text: #454f79;
-}
-        </style>
-    </head>
-    <body>
-        <script src="satus.js"></script>
-        <script src="popup.js"></script>
-    </body>
+			<span>/</span>
+
+			<input type=text list=browser-data id=browser  placeholder=Browser>
+			<datalist id=browser-data>
+				<option>Chrome</option>
+				<option>Safari</option>
+				<option>Firefox</option>
+				<option>Edge</option>
+				<option>IE</option>
+				<option>Opera</option>
+				<option>Samsung Internet</option>
+				<option>UC Browser</option>
+			</datalist>
+		</div>
+		
+		<span>or</span>
+		
+		<div>
+            <input type=text id=custom placeholder=Custom>
+		</div>
+
+		<script src=popup.js></script>
+	</body>
 </html>
