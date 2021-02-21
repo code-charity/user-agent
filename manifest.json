@@ -1,6 +1,7 @@
 {
 	"manifest_version": 2,
-	"name": "Custom User-Agent",
+	"name": "User-Agent",
+        "description": "User-Agent Switcher like never before! User-Agent by domain url regex wildcard. Keep Mobile version. Top100 User-Agent UA UserAgent",
 	"version": "1.3",
 	"default_locale": "en",
 	"icons": {
