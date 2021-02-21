@@ -1,10 +1,10 @@
 <p align="center">
-    <a href="https://github.com/victor-savinov/custom-user-agent">
+    <a href="https://github.com/victor-savinov/user-agent">
         <img src="https://github.com/victor-savinov/icons/blob/master/custom-user-agent/raised-128.png">
     </a>
 </p>
 
-<h3 align="center">Custom User-Agent</h3>
+<h3 align="center">User-Agent</h3>
 
 <p align="center">
     Swich between user-agents.
