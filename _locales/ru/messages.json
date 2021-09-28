@@ -1,98 +1,98 @@
 {
     "about": {
-        "message": "About"
+        "message": "О системе"
     },
     "appearance": {
-        "message": "Appearance"
+        "message": "Внешний вид"
     },
     "audioFormats": {
-        "message": "Audio formats"
+        "message": "Аудио форматы"
     },
     "browser": {
-        "message": "Browser"
+        "message": "Браузер"
     },
     "car": {
-        "message": "Car"
+        "message": "Автомобиль"
     },
     "computer": {
-        "message": "Computer"
+        "message": "Компьютер"
     },
     "cores": {
-        "message": "Cores"
+        "message": "Ядра"
     },
     "custom": {
-        "message": "Custom"
+        "message": "Свой..."
     },
     "device": {
-        "message": "Device"
+        "message": "Устройство"
     },
     "extension": {
-        "message": "Extension"
+        "message": "Расширение"
     },
     "flash": {
         "message": "Flash"
     },
     "gameConsole": {
-        "message": "Game console"
+        "message": "Игровая консоль"
     },
     "gpu": {
         "message": "GPU"
     },
     "hardware": {
-        "message": "Hardware"
+        "message": "Аппаратура"
     },
     "hideStarUs": {
-        "message": "Hide \"Star us...\""
+        "message": "Скрыть \"Star us...\""
     },
     "language": {
-        "message": "Language"
+        "message": "Язык"
     },
     "languages": {
-        "message": "Languages"
+        "message": "Языки"
     },
     "name": {
-        "message": "Name"
+        "message": "Имя"
     },
     "os": {
-        "message": "OS"
+        "message": "ОС"
     },
     "permissions": {
-        "message": "Permissions"
+        "message": "Разрешения"
     },
     "phone": {
-        "message": "Phone"
+        "message": "Телефон"
     },
     "platform": {
-        "message": "Platform"
+        "message": "Платформа"
     },
     "ram": {
         "message": "RAM"
     },
     "screen": {
-        "message": "Screen"
+        "message": "Экран"
     },
     "settings": {
-        "message": "Settings"
+        "message": "Настройки"
     },
     "software": {
-        "message": "Software"
+        "message": "Программное обеспечение"
     },
     "tablet": {
-        "message": "Tablet"
+        "message": "Планшет"
     },
     "tv": {
-        "message": "TV"
+        "message": "ТВ"
     },
     "type": {
-        "message": "Type"
+        "message": "Тип"
     },
     "version": {
-        "message": "Version"
+        "message": "Версия"
     },
     "videoFormats": {
-        "message": "Video formats"
+        "message": "Видео форматы"
     },
     "watch": {
-        "message": "Watch"
+        "message": "Часы"
     }
 }
