@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://github.com/victor-savinov/user-agent">
-        <img src="https://github.com/victor-savinov/icons/blob/master/custom-user-agent/raised-128.png">
+        <img src="https://github.com/victor-savinov/icons/blob/master/user-agent/128.png">
     </a>
 </p>
 
@@ -50,7 +50,7 @@
 - [ ] [Portuguese (Brazil)](https://github.com/victor-savinov/user-agent/tree/master/_locales/pt_BR/messages.json) `/pt_BR/`
 - [ ] [Portuguese (Portugal)](https://github.com/victor-savinov/user-agent/tree/master/_locales/pt_PT/messages.json) `/pt_PT/`
 - [ ] [Romanian](https://github.com/victor-savinov/user-agent/tree/master/_locales/ro/messages.json) `/ro/`
-- [ ] [Russian](https://github.com/victor-savinov/user-agent/tree/master/_locales/ru/messages.json) `/ru/`
+- [x] [Russian](https://github.com/victor-savinov/user-agent/tree/master/_locales/ru/messages.json) `/ru/`
 - [ ] [Slovak](https://github.com/victor-savinov/user-agent/tree/master/_locales/sk/messages.json) `/sk/`
 - [ ] [Slovenian](https://github.com/victor-savinov/user-agent/tree/master/_locales/sl/messages.json) `/sl/`
 - [ ] [Serbian](https://github.com/victor-savinov/user-agent/tree/master/_locales/sr/messages.json) `/sr/`
