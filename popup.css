@@ -1,142 +1,158 @@
 /*---------------------------------------------------------------
->>> CUSTOM USER-AGENT
+>>> USER AGENT
 -----------------------------------------------------------------
-# Theme
+# 
 ---------------------------------------------------------------*/
 
-@font-face
-{
-    font-family: 'Poppins';
-
-    src: url(assets/fonts/Poppins-Regular.ttf);
+html {
+    --satus-primary: #764e7e;
+    --satus-modal-background: #3b273f;
+    --satus-modal-text: #faeaed;
+    --satus-header-background: #ed2c4c;
+    --satus-header-text: #faeaed;
+    --satus-layers-background: #28102d;
+    --satus-layers-text: #faeaed;
+    --satus-section-card-background: #3b273f;
+    --satus-hover: rgba(255, 255, 255, .12);
+    --satus-switch-track: #28102d;
+    --satus-switch-track--active: #ed2c4c;
+    --satus-switch-thumb: #c6cad2;
+    --satus-tabs: #3b273f;
+    --satus-pluviam-background: #fff;
+    --satus-pluviam-opacity: .12;
 }
 
-@font-face
-{
-    font-family: 'Poppins';
+.satus-header {
     font-weight: 600;
-
-    src: url(assets/fonts/Poppins-SemiBold.ttf);
+    z-index: 1;
+    box-shadow: 0 2px 0 #b81430;
 }
 
-@font-face
-{
-    font-family: 'Poppins';
-    font-weight: 700;
-
-    src: url(assets/fonts/Poppins-Bold.ttf);
-}
-
-html,
-body
-{
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-}
-
-.satus-header
-{
+.satus-header .satus-h1--title {
+    font-size: 16px;
     overflow: hidden;
-
-    background: linear-gradient(45deg, #254aab, #3a66da);
-    box-shadow: inset 0 -1px 2px rgba(0,0,0,.2), 0 2px 6px rgba(0,0,0,.4);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-shadow: 2px 1px #b81430;
+    flex: 1;
 }
 
-.satus-header::before
-{
+.satus-header .satus-button>.satus-span {
     position: absolute;
-    z-index: 1;
-    top: -16px;
-    left: -32vw;
-
-    width: 100vw;
-    height: 100vw;
-
-    content: '';
-
-    opacity: .1;
+    left: 18px;
+    width: 3px;
+    height: 3px;
     border-radius: 50%;
-    background: #fff;
+    background: currentColor;
+    box-shadow: 2px 1px #b81430;
 }
 
-.satus-header::after
-{
+.satus-header .satus-button>.satus-span:nth-child(1) {
+    top: 11px;
+}
+
+.satus-header .satus-button>.satus-span:nth-child(2) {
+    top: 19px;
+}
+
+.satus-header .satus-button>.satus-span:nth-child(3) {
+    bottom: 10px;
+}
+
+.satus-modal--vertical .satus-modal__surface {
     position: absolute;
-    top: 16px;
-    right: 8vw;
-
-    width: 64vw;
-    height: 64vw;
-
-    content: '';
-
-    opacity: .1;
-    border-radius: 50%;
-    background: #fff;
+    top: 8px;
+    right: 8px;
+    left: auto;
+    min-width: 180px;
+    max-width: 180px;
+    transform-origin: right top;
+    padding: 8px 0;
 }
 
-.satus-header .satus-text--title
-{
-    font-weight: 600;
-
-    z-index: 1;
-
-    letter-spacing: .4px;
-}
-
-.satus-radio-group
-{
+.satus-modal--vertical .satus-button {
     display: flex;
-
-    margin: 16px 8px;
-
-    justify-content: space-between;
-}
-
-.satus-button--radio
-{
-    width: calc(calc(100% - 16px) / 3);
-    padding: 0;
-}
-
-.satus-button__before
-{
-    display: flex;
-
-    box-sizing: border-box;
-    width: 48px;
-    height: 48px;
-    margin: 0 0 4px;
-    padding: 8px;
-
-    border-radius: 50%;
-    background: var(--satus-theme-section);
-    box-shadow: 0 0 3px rgba(0,0,0,.1);
-
-    justify-content: center;
+    height: 36px;
+    padding: 0 16px;
     align-items: center;
 }
 
-.satus-button--radio svg
-{
-    width: 24px;
-    height: 24px;
+.satus-modal--vertical .satus-button svg {
+    width: 20px;
+    height: 18px;
+    margin: 0 14px 0 0;
+    opacity: .75;
+    fill: none;
+    stroke: var(--satus-primary);
+    flex: 0 0 20px;
 }
 
-/*.satus-button--computer
-{
-    background: #e95584;
-    color: #fff;
-}*/
+.satus-modal--vertical .satus-button .satus-span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
 
-.satus-section--card
-{
-    border: none;
-    box-shadow: 0 0 3px rgba(0,0,0,.1);
+.satus-section--column {
+    width: 100%;
+    height: 100%;
+}
+
+.satus-textarea {
+    font-family: monospace;
+    font-size: inherit;
+    width: calc(100% - 32px);
+    height: calc(100% - 32px);
+    padding: 8px;
+    resize: none;
+    color: inherit;
+    border-radius: 8px;
+    outline: none;
+    background: var(--satus-section-card-background);
+    appearance: none;
+    margin: 16px;
+    box-sizing: border-box;
 }
 
 
+/*--------------------------------------------------------------
+# STAR US ON GITHUB
+--------------------------------------------------------------*/
 
-/*---------------------------------------------------------------
-# THEME
----------------------------------------------------------------*/
+.star-us-on-github {
+    font-size: 13px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 0;
+    cursor: pointer;
+    transition: 150ms;
+    transform: translateX(-50%);
+    text-align: center;
+    text-decoration: none;
+    color: #9595b2;
+    justify-content: center;
+}
+
+[hide-star-us-on-github=true] .star-us-on-github {
+    display: none;
+}
+
+.star-us-on-github svg {
+    position: relative;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+}
+
+.star-us-on-github span:first-child {
+    margin: 0 4px 0 0;
+}
+
+.star-us-on-github span:last-child {
+    margin: 0 0 0 4px;
+}

@@ -1,11 +1,98 @@
 {
+    "about": {
+        "message": "About"
+    },
+    "appearance": {
+        "message": "Appearance"
+    },
+    "audioFormats": {
+        "message": "Audio formats"
+    },
+    "browser": {
+        "message": "Browser"
+    },
+    "car": {
+        "message": "Car"
+    },
+    "computer": {
+        "message": "Computer"
+    },
+    "cores": {
+        "message": "Cores"
+    },
+    "custom": {
+        "message": "Custom"
+    },
+    "device": {
+        "message": "Device"
+    },
+    "extension": {
+        "message": "Extension"
+    },
+    "flash": {
+        "message": "Flash"
+    },
+    "gameConsole": {
+        "message": "Game console"
+    },
+    "gpu": {
+        "message": "GPU"
+    },
+    "hardware": {
+        "message": "Hardware"
+    },
+    "hideStarUs": {
+        "message": "Hide \"Star us...\""
+    },
+    "language": {
+        "message": "Language"
+    },
+    "languages": {
+        "message": "Languages"
+    },
+    "name": {
+        "message": "Name"
+    },
     "os": {
         "message": "OS"
+    },
+    "permissions": {
+        "message": "Permissions"
+    },
+    "phone": {
+        "message": "Phone"
+    },
+    "platform": {
+        "message": "Platform"
+    },
+    "ram": {
+        "message": "RAM"
+    },
+    "screen": {
+        "message": "Screen"
+    },
+    "settings": {
+        "message": "Settings"
     },
     "software": {
         "message": "Software"
     },
-    "hardware": {
-        "message": "Hardware"
+    "tablet": {
+        "message": "Tablet"
+    },
+    "tv": {
+        "message": "TV"
+    },
+    "type": {
+        "message": "Type"
+    },
+    "version": {
+        "message": "Version"
+    },
+    "videoFormats": {
+        "message": "Video formats"
+    },
+    "watch": {
+        "message": "Watch"
     }
 }
