@@ -2,6 +2,9 @@
     "about": {
         "message": "О системе"
     },
+    "allYourSettingsWillBeErasedAndCanTBeRecovered": {
+        "message": "Все ваши настройки будут удалены и не могут быть восстановлены"
+    },
     "appearance": {
         "message": "Внешний вид"
     },
@@ -10,6 +13,9 @@
     },
     "browser": {
         "message": "Браузер"
+    },
+    "cancel": {
+        "message": "Cancel"
     },
     "car": {
         "message": "Автомобиль"
@@ -25,6 +31,9 @@
     },
     "device": {
         "message": "Устройство"
+    },
+    "export": {
+        "message": "Экспортировать"
     },
     "extension": {
         "message": "Расширение"
@@ -43,6 +52,9 @@
     },
     "hideStarUs": {
         "message": "Скрыть \"Star us...\""
+    },
+    "import": {
+        "message": "Импортировать"
     },
     "language": {
         "message": "Язык"
@@ -67,6 +79,9 @@
     },
     "ram": {
         "message": "RAM"
+    },
+    "reset": {
+        "message": "Сбросить"
     },
     "screen": {
         "message": "Экран"

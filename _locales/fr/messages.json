@@ -2,6 +2,9 @@
     "about": {
         "message": "À propos"
     },
+    "allYourSettingsWillBeErasedAndCanTBeRecovered": {
+        "message": "All your settings will be erased and can't be recovered"
+    },
     "appearance": {
         "message": "Apparence"
     },
@@ -10,6 +13,9 @@
     },
     "browser": {
         "message": "Navigateur web"
+    },
+    "cancel": {
+        "message": "Cancel"
     },
     "car": {
         "message": "Voiture"
@@ -25,6 +31,9 @@
     },
     "device": {
         "message": "Appareil"
+    },
+    "export": {
+        "message": "Export"
     },
     "extension": {
         "message": "Extension"
@@ -43,6 +52,9 @@
     },
     "hideStarUs": {
         "message": "Cacher \"Nous partager...\""
+    },
+    "import": {
+        "message": "Import"
     },
     "language": {
         "message": "Langue"
@@ -67,6 +79,9 @@
     },
     "ram": {
         "message": "RAM"
+    },
+    "reset": {
+        "message": "Reset"
     },
     "screen": {
         "message": "Écran"

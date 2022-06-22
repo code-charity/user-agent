@@ -1,57 +1,107 @@
 /*--------------------------------------------------------------
 >>> BACKGROUND
+----------------------------------------------------------------
+# Global variable
+# Update user agent
+# Messages
+# Storage
+    # Get
+    # On change
 --------------------------------------------------------------*/
 
-var ext_storage = {};
+/*--------------------------------------------------------------
+# GLOBAL VARIABLE
+--------------------------------------------------------------*/
 
-chrome.storage.local.get(function(items) {
-    ext_storage = items;
-    
-    function requestListener(request) {
-        if (typeof request.requestHeaders === 'object') {
-            for (var header of request.requestHeaders) {
-                if (header.name.toLowerCase() === 'user-agent') {
-                    if (ext_storage['user-agent'] && ext_storage['user-agent'] !== '') {
-                        header.value = ext_storage['user-agent'];
-                    }
-                }
-            }
-        }
+var extension = {};
 
-        return {
-            requestHeaders: request.requestHeaders
-        };
-    }
 
-    chrome.webRequest.onBeforeSendHeaders.addListener(
-        requestListener, {
-            urls: ['<all_urls>']
-        }, ['blocking', 'requestHeaders']
-    );
+/*--------------------------------------------------------------
+# UPDATE USER AGENT
+--------------------------------------------------------------*/
 
-    chrome.storage.onChanged.addListener(function(changes) {
-        for (var key in changes) {
-            var value = changes[key].newValue;
+extension.updateUserAgent = function (string) {
+	if (typeof string === 'string') {
+		chrome.declarativeNetRequest.updateDynamicRules({
+			addRules: [{
+				'id': 1001,
+				'priority': 1,
+				'action': {
+					'type': 'modifyHeaders',
+					'requestHeaders': [{
+						'header': 'User-Agent',
+						'operation': 'set',
+						'value': string
+					}]
+				},
+				'condition': {
+					'urlFilter': '*://*/*',
+					'resourceTypes': [
+						'main_frame',
+						'sub_frame',
+						'stylesheet',
+						'script',
+						'image',
+						'font',
+						'object',
+						'xmlhttprequest',
+						'ping',
+						'csp_report',
+						'media',
+						'websocket',
+						'webtransport',
+						'webbundle',
+						'other'
+					]
+				}
+			}],
+			removeRuleIds: [1001]
+		});
+	} else {
+		chrome.declarativeNetRequest.updateDynamicRules({
+			removeRuleIds: [1001]
+		});
+	}
+};
 
-            ext_storage[key] = changes[key].newValue;
-        }
 
-        chrome.webRequest.onBeforeSendHeaders.removeListener(
-            requestListener, {
-                urls: ['<all_urls>']
-            }, ['blocking', 'requestHeaders']
-        );
+/*--------------------------------------------------------------
+# MESSAGES
+--------------------------------------------------------------*/
 
-        chrome.webRequest.onBeforeSendHeaders.addListener(
-            requestListener, {
-                urls: ['<all_urls>']
-            }, ['blocking', 'requestHeaders']
-        );
-    });
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+	var action = message.action;
+
+	if (action === 'options-page-connected') {
+		sendResponse({
+			isPopup: sender.hasOwnProperty('tab') === false
+		});
+	}
 });
 
+
+/*--------------------------------------------------------------
+# STORAGE
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# GET
+--------------------------------------------------------------*/
+
+
+chrome.storage.local.get(function (items) {
+	extension.updateUserAgent(items['user-agent']);
+});
+
+
+/*--------------------------------------------------------------
+# ON CHANGE
+--------------------------------------------------------------*/
+
 chrome.storage.onChanged.addListener(function (changes) {
-    for (var key in changes) {
-        ext_storage[key] = changes[key].newValue;
-    }
+	for (var key in changes) {
+		if (key === 'user-agent') {
+			extension.updateUserAgent(changes[key].newValue);
+		}
+	}
 });

@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://github.com/victor-savinov/user-agent">
-        <img src="https://github.com/victor-savinov/icons/blob/master/user-agent/128.png">
+        <img src="https://github.com/victor-savinov/graphics/blob/master/icons/user-agent/128.png">
     </a>
 </p>
 
@@ -28,7 +28,7 @@
 - [ ] [Persian](https://github.com/victor-savinov/user-agent/tree/master/_locales/fa/messages.json) `/fa/`
 - [ ] [Finnish](https://github.com/victor-savinov/user-agent/tree/master/_locales/fi/messages.json) `/fi/`
 - [ ] [Filipino](https://github.com/victor-savinov/user-agent/tree/master/_locales/fil/messages.json) `/fil/`
-- [ ] [French](https://github.com/victor-savinov/user-agent/tree/master/_locales/fr/messages.json) `/fr/`
+- [x] [French](https://github.com/victor-savinov/user-agent/tree/master/_locales/fr/messages.json) `/fr/`
 - [ ] [Gujarati](https://github.com/victor-savinov/user-agent/tree/master/_locales/gu/messages.json) `/gu/`
 - [ ] [Hebrew](https://github.com/victor-savinov/user-agent/tree/master/_locales/he/messages.json) `/he/`
 - [ ] [Hindi](https://github.com/victor-savinov/user-agent/tree/master/_locales/hi/messages.json) `/hi/`

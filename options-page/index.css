@@ -1,0 +1,95 @@
+/*--------------------------------------------------------------
+>>> OPTIONS PAGE
+----------------------------------------------------------------
+# Fonts
+	# Regular
+	# Medium
+	# Bold
+# Theme
+# Vertical menu
+# Tab mode
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# REGULAR
+--------------------------------------------------------------*/
+
+@font-face {
+	font-family: Roboto;
+
+	src: url(../assets/fonts/Roboto-Regular.ttf);
+}
+
+
+/*--------------------------------------------------------------
+# MEDIUM
+--------------------------------------------------------------*/
+
+@font-face {
+	font-family: Roboto;
+	font-weight: 500;
+
+	src: url(../assets/fonts/Roboto-Medium.ttf);
+}
+
+
+/*--------------------------------------------------------------
+# BOLD
+--------------------------------------------------------------*/
+
+@font-face {
+	font-family: Roboto;
+	font-weight: 700;
+
+	src: url(../assets/fonts/Roboto-Bold.ttf);
+}
+
+
+/*--------------------------------------------------------------
+# THEME
+--------------------------------------------------------------*/
+
+.satus-base {
+	--satus-light: 255, 255, 255;
+	--satus-primary: #c92c46;
+	--satus-base-background: #1b1528;
+	--satus-base-foreground: #fafafa;
+	--satus-header-background: #473172;
+	--satus-header-shadow: transparent;
+	--satus-section-background: #2e2343;
+	--satus-section-border: #2e2343;
+	--satus-modal-background: #473172;
+	--satus-modal-shadow: 0 1px 4px #222;
+	--satus-text-field-background: #2e2343;
+}
+
+
+/*--------------------------------------------------------------
+# VERTICAL MENU
+--------------------------------------------------------------*/
+
+.satus-modal--vertical-menu .satus-modal__surface {
+	max-width: 200px;
+}
+
+
+/*--------------------------------------------------------------
+# TAB MODE
+--------------------------------------------------------------*/
+
+
+body[tab] {
+	overflow: hidden;
+
+	width: 100vw;
+	height: 100vh;
+}
+
+body[tab] .satus-base {
+	width: 100%;
+	height: 100%;
+}
+
+body[tab] .satus-alert {
+	display: none;
+}
